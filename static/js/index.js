@@ -1,12 +1,15 @@
 console.log('Hi this is Shubham\nContact at shubhamprakash702@gmail.com for any issue');
-// news_api_key = 2ddd527e51644ef8a3b329adf0bc718d (news.org)
-
+// newsapi.org_key = 2ddd527e51644ef8a3b329adf0bc718d (news.org)
+// gnews.io_key = 9fc87a67aefe8b92e6eb90fc1b1fb747
 // grab the news container
 let myNews = document.getElementById('myNews');
 
 // initialising the variable
-let api = '2ddd527e51644ef8a3b329adf0bc718d';
-let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${api}`;
+let api = '9fc87a67aefe8b92e6eb90fc1b1fb747';
+let lang = 'en';
+let country = 'in';
+// let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${api}`; from newsapi.org
+let url = `https://gnews.io/api/v4/top-headlines?&token=${api}&lang=${lang}&country=${country}`; //from gnews.io
 
 // fetching news from the news api
 fetch(url)
@@ -31,7 +34,7 @@ function putNews(data){
             <div class="card-fluid w-75 my-3 newsBox" style="border: 1px solid rgb(162, 162, 241);margin: auto;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="${element["urlToImage"]}" class="img-fluid rounded-start" alt="Image Not Found">
+                        <img src="${element["image"]}" class="img-fluid rounded-start" alt="Image Not Found">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
